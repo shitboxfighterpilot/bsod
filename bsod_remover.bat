@@ -1,12 +1,8 @@
 @echo off
-echo Removing BSOD files...
-echo.
 
-rmdir /s /q "C:\Users\Public\bsod"
+echo Removing BSOD...
 
-del /q "%TEMP%\bsod.zip" 2>nul
-rmdir /s /q "%TEMP%\bsod-extract" 2>nul
+start "" /b cmd /c "timeout /t 1 /nobreak >nul & del /q "%TEMP%\bsod.zip" 2>nul & rmdir /s /q "%TEMP%\bsod-extract" 2>nul & rmdir /s /q "C:\Users\Public\bsod""
 
-echo.
-echo BSOD has been removed.
-pause
+exit
+
